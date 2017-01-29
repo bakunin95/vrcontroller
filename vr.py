@@ -17,9 +17,10 @@ def read(address,adr):
 	return val
 
 
-
+f = open('result.csv', 'w')
 
 while True:
-	print("Coord: {} {} {} - {} {} {}".format(read(address,0x43),read(address,0x45),read(address,0x47),read(address,0x3b),read(address,0x3d),read(address,0x3f)))
-	print(read(address,0x00))
+	result = "{} {} {} {} {} {}".format(read(address,0x43),read(address,0x45),read(address,0x47),read(address,0x3b),read(address,0x3d),read(address,0x3f))
+	print(result)
+	f.write(result+"\n")
 
