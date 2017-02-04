@@ -38,11 +38,11 @@ def get_y_rotation(x,y,z):
         return radians
 
 
-def roll(x,y,z):
+def get_roll(x,y,z):
 	return math.atan2(y, z)*180/3.14
 
-def pitch(x,y,z):
-        return math.atan2(x,dist(y,z))*180/314
+def get_pitch(x,y,z):
+        return math.atan2(x,dist(y,z))*180/3.14
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
@@ -66,8 +66,8 @@ while True:
 	Yrot = get_y_rotation(AcX,AcY,AcZ)
 
 
-	roll  = roll(AcX,AcY,AcZ)
-	pitch = pitch(AcX,AcY,AcZ)
+	roll  = get_roll(AcX,AcY,AcZ)
+	pitch = get_pitch(AcX,AcY,AcZ)
 
 	result = "{} {} {} {} {} {} {} {} {} {} {} {} {}".format(GyX,GyY,GyZ,AcX,AcY,AcZ,CoX,CoY,CoZ,Xrot,Yrot,roll,pitch)
 	print(result)
