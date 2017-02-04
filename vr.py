@@ -1,5 +1,8 @@
 import smbus
 import math
+import time
+
+
 
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
@@ -28,7 +31,10 @@ def get_y_rotation(x,y,z):
 	radians = math.atan(y / dist(x,z))
 	return math.degrees(radians)
 
-f = open('result3.csv', 'w')
+
+timestr = time.strftime("%Y%m%d-%H%M%S")
+
+f = open('result'+timestr+'.csv', 'w')
 gyrosensitivity  = 131;
 accelsensitivity = 16384
 while True:        	
