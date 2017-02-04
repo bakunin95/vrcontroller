@@ -38,7 +38,7 @@ def get_y_rotation(x,y,z):
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
-f = open('result'+timestr+'.csv', 'w')
+f = open('results/result'+timestr+'.csv', 'w')
 gyrosensitivity  = 131;
 accelsensitivity = 16384
 while True:        	
@@ -51,9 +51,9 @@ while True:
 	AcX = read(address,0x3b)
 	AcY = read(address,0x3d)
 	AcZ = read(address,0x3f)
-	CoX = read(address,0x4a)
-	CoY = read(address,0x4c)
-	CoZ = read(address,0x4e)
+	CoX = read(address,0x4A)
+	CoY = read(address,0x4C)
+	CoZ = read(address,0x4E)
 	Xrot = get_x_rotation(AcX,AcY,AcZ)
 	Yrot = get_y_rotation(AcX,AcY,AcZ)
 
