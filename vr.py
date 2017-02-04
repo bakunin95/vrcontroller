@@ -37,6 +37,13 @@ def get_y_rotation(x,y,z):
 #	return math.degrees(radians)
         return radians
 
+
+def roll(x,y,z):
+	return math.atan2(y, z)*180/3.14
+
+def pitch(x,y,z):
+        return math.atan2(x,dist(y,z))*180/314
+
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
 f = open('results/result'+timestr+'.csv', 'w')
@@ -58,7 +65,11 @@ while True:
 	Xrot = get_x_rotation(AcX,AcY,AcZ)
 	Yrot = get_y_rotation(AcX,AcY,AcZ)
 
-	result = "{} {} {} {} {} {} {} {} {} {} {}".format(GyX,GyY,GyZ,AcX,AcY,AcZ,CoX,CoY,CoZ,Xrot,Yrot)
+
+	roll  = roll(AcX,AcY,AcZ)
+	pitch = pitch(AcX,AcY,AcZ)
+
+	result = "{} {} {} {} {} {} {} {} {} {} {} {} {}".format(GyX,GyY,GyZ,AcX,AcY,AcZ,CoX,CoY,CoZ,Xrot,Yrot,roll,pitch)
 	print(result)
 	f.write(result+"\n")
 
