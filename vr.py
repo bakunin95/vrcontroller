@@ -45,9 +45,12 @@ while True:
 	GyX = read(address,0x43)/gyrosensitivity
 	GyY = read(address,0x45)/gyrosensitivity
 	GyZ = read(address,0x47)/gyrosensitivity
-	AcX = read(address,0x3b)/accelsensitivity 
-	AcY = read(address,0x3d)/accelsensitivity
-	AcZ = read(address,0x3f)/accelsensitivity
+#	AcX = read(address,0x3b)/accelsensitivity 
+#	AcY = read(address,0x3d)/accelsensitivity
+#	AcZ = read(address,0x3f)/accelsensitivity
+	AcX = read(address,0x3b)
+	AcY = read(address,0x3d)
+	AcZ = read(address,0x3f)
 	CoX = read(address,0x4a)
 	CoY = read(address,0x4c)
 	CoZ = read(address,0x4e)
