@@ -25,7 +25,8 @@ def dist(a,b):
 
 def get_x_rotation(x,y,z):
 	radians = math.atan(x / dist(y,z))
-	return math.degrees(radians)
+#	return math.degrees(radians)
+        return radians
 
 def get_y_rotation(x,y,z):
         radians = 0
@@ -33,8 +34,8 @@ def get_y_rotation(x,y,z):
     		radians = math.atan(y / dist(x,z))
 	except :
    		pass	
-	return math.degrees(radians)
-
+#	return math.degrees(radians)
+        return radians
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
